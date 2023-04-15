@@ -1,0 +1,214 @@
+00			NOP
+01			XCH A, E
+
+06			LD A, S
+07			LD S, A
+08			PUSH EA
+09			LD T, EA
+0A			PUSH A
+0B			LD EA, T
+0C			SR EA
+0D			DIV EA, T
+0E			SL A
+0F			SL EA
+
+10			CALL 0
+11			CALL 1
+12			CALL 2
+13			CALL 3
+14			CALL 4
+15			CALL 5
+16			CALL 6
+17			CALL 7
+18			CALL 8
+19			CALL 9
+1A			CALL 10
+1B			CALL 11
+1C			CALL 12
+1D			CALL 13
+1E			CALL 14
+1F			CALL 15
+
+20 xxyy		JSR yyxx
+22 xxyy		PLI P2, =yyxx
+23 xxyy		PLI P3, =yyxx
+24 xxyy		JMP yyxx
+25 xxyy		LD SP, =yyxx
+26 xxyy		LD P2, =yyxx
+27 xxyy		LD P3, =yyxx
+
+2C			MPY EA, T
+2D xx		BND xx, PC
+2E			SSM P2
+2F			SSM P3
+
+30			LD EA, PC
+31			LD EA, SP
+32			LD EA, P2
+33			LD EA, P3
+
+38			POP A
+39 xx		AND S, =xx
+3A			POP EA
+3B xx		OR S, =xx
+3C			SR A
+3D			SRL A
+3E			RR A
+3F			RRL A
+
+40			LD A, E
+44			LD PC, EA
+45			LD SP, EA
+46			LD P2, EA
+47			LD P3, EA
+48			LD E, A
+4C			XCH PC, EA
+4D			XCH EA, SP
+4E			XCH EA, P2
+4F			XCH EA, P3
+
+50			AND A, E
+54			PUSH PC
+56			PUSH P2
+57			PUSH P3
+58			OR A, E
+5C			RET
+5E			POP P2
+5F			POP P3
+
+60			XOR A, E
+64 xx		BP xx
+66 xx		BP xx, P2
+67 xx		BP xx, P3
+6C xx		BZ xx
+6E xx		BZ xx, P2
+6F xx		BZ xx, P3
+
+70			ADD A, E
+74 xx		BRA xx
+76 xx		BRA xx, P2
+77 xx		BRA xx, P3
+78			SUB	A, E
+7C xx		BNZ xx
+7E xx		BNZ xx, P2
+7F xx		BNZ xx, P3
+
+80 xx		LD EA, xx, PC
+81 xx		LD EA, xx, SP
+82 xx		LD EA, xx, P2
+83 xx		LD EA, xx, P3
+84 xx		LD EA, =yyxx
+85 xx		LD EA, xx
+86 xx		LD EA, @xx, P2
+87 xx		LD EA, @xx, P3
+88 xx		ST EA, xx, PC
+89 xx		ST EA, xx, SP
+8A xx		ST EA, xx, P2
+8B xx		ST EA, xx, P3
+8D xx		ST EA, xx
+8E xx		ST EA, @xx, P2
+8F xx		ST EA, @xx, P3
+
+90 xx		ILD A, xx, PC
+91 xx		ILD A, xx, SP
+92 xx		ILD A, xx, P2
+93 xx		ILD A, xx, P3
+95 xx		ILD A, xx
+96 xx		ILD A, @xx, P2
+97 xx		ILD A, @xx, P3
+98 xx		DLD A, xx, PC
+99 xx		DLD A, xx, SP
+9A xx		DLD A, xx, P2
+9B xx		DLD A, xx, P3
+9D xx		DLD A, xx
+9E xx		DLD A, @xx, P2
+9F xx		DLD A, @xx, P3
+
+A0 xx		LD T, xx, PC
+A1 xx		LD T, xx, SP
+A2 xx		LD T, xx, P2
+A3 xx		LD T, xx, P3
+A4 xxyy		LD T, =yyxx
+A5 xx		LD T, xx
+A6 xx		LD T, @xx, P2
+A7 xx		LD T, @xx, P3
+
+B0 xx		ADD EA, xx, PC
+B1 xx		ADD EA, xx, SP
+B2 xx		ADD EA, xx, P2
+B3 xx		ADD EA, xx, P3
+B4 xxyy		ADD EA, =yyxx
+B5 xx		ADD EA, xx
+B6 xx		ADD EA, @xx, P2
+B7 xx		ADD EA, @xx, P3
+
+B8 xx		SUB EA, xx, PC
+B9 xx		SUB EA, xx, SP
+BA xx		SUB EA, xx, P2
+BB xx		SUB EA, xx, P3
+BC xxyy		SUB EA, =yyxx
+BD xx		SUB EA, xx
+BE xx		SUB EA, @xx, P2
+BF xx		SUB EA, @xx, P3
+
+C0 xx		LD A, xx, PC
+C1 xx		LD A, xx, SP
+C2 xx		LD A, xx, P2
+C3 xx		LD A, xx, P3
+C4 xx		LD A, =xx
+C5 xx		LD A, xx
+C6 xx		LD A, @xx, P2
+C7 xx		LD A, @xx, P3
+
+C8 xx		ST A, xx, PC
+C9 xx		ST A, xx, SP
+CA xx		ST A, xx, P2
+CB xx		ST A, xx, P3
+CD xx		ST A, xx
+CE xx		ST A, @xx, P2
+CF xx		ST A, @xx, P3
+
+D0 xx		AND A, xx, PC
+D1 xx		AND A, xx, SP
+D2 xx		AND A, xx, P2
+D3 xx		AND A, xx, P3
+D4 xx		AND A, =xx
+D5 xx		AND A, xx
+D6 xx		AND A, @xx, P2
+D7 xx		AND A, @xx, P3
+
+D8 xx		OR A, xx, PC
+D9 xx		OR A, xx, SP
+DA xx		OR A, xx, P2
+DB xx		OR A, xx, P3
+DC xx		OR A, =xx
+DD xx		OR A, xx
+DE xx		OR A, @xx, P2
+DF xx		OR A, @xx, P3
+
+E0 xx		XOR A, xx, PC
+E1 xx		XOR A, xx, SP
+E2 xx		XOR A, xx, P2
+E3 xx		XOR A, xx, P3
+E4 xx		XOR A, =xx
+E5 xx		XOR A, xx
+E6 xx		XOR A, @xx, P2
+E7 xx		XOR A, @xx, P3
+
+F0 xx		ADD A, xx, PC
+F1 xx		ADD A, xx, SP
+F2 xx		ADD A, xx, P2
+F3 xx		ADD A, xx, P3
+F4 xx		ADD A, =xx
+F5 xx		ADD A, xx
+F6 xx		ADD A, @xx, P2
+F7 xx		ADD A, @xx, P3
+
+F8 xx		SUB A, xx, PC
+F9 xx		SUB A, xx, SP
+FA xx		SUB A, xx, P2
+FB xx		SUB A, xx, P3
+FC xx		SUB A, =xx
+FD xx		SUB A, xx
+FE xx		SUB A, @xx, P2
+FF xx		SUB A, @xx, P3
